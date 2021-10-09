@@ -2,8 +2,7 @@
 
 
 <!-- 
-Juan Echeverry
-@pasadooscuro
+Un proyecto de Juan Echeverry [@pasadooscuro] en colaboración con Sebastián Mira [@argammasa]
 2021
 
 _¶¶¶_¶¶_¶¶¶¶
@@ -54,8 +53,9 @@ _______¶¶¶¶¶¶¶¶¶¶¶______¶¶¶¶¶¶¶¶
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bajo tu manto me oculto</title>
-    <link rel="shortcut icon" href="control-de-ciber-cliente.png">
+    <meta name="description" content="📿 @pasadooscuro + @argammasa 📿 2021 📿 ">
+    <title> 𝔅𝔄𝔍𝔒 𝔗𝔘 𝔐𝔄𝔑𝔗𝔒 𝔐𝔈 𝔒ℭ𝔘𝔏𝔗𝔒 </title>
+    <link rel="shortcut icon" href="https://d2w9rnfcy7mm78.cloudfront.net/13489344/original_538361e9e599f2ea66fbd4ce75996b8d.png?1633739798?bc=0">
 
 </head>
 
@@ -66,38 +66,30 @@ _______¶¶¶¶¶¶¶¶¶¶¶______¶¶¶¶¶¶¶¶
 
         
  
-    <a-scene loading-screen="dotsColor: red; backgroundColor: black" vr-mode-ui="enabled: false">
-        <a-entity id="rig" movement-controls kinematic-body position="2.192 0 19.956">
-            <a-entity id="camera" camera position="0 2 0" look-controls  cursor="rayOrigin: mouse"></a-entity>
-          </a-entity>
-        <a-assets>
-            <a-asset-item id="tree" src="./assets/guadalupanaestelar.glb"></a-asset-item>
-            <a-asset-item id="camiseta" src="./assets/esqueleto_atras1.gltf"></a-asset-item>
-            <!-- <a-asset-item id="tree2" src="./hola2.gltf"></a-asset-item> -->
-            <img id="sky" src="aa.jpg">
-            <img id="my-image" src="infO2.png">
-            <img id="floor" src="a.jpg">
-
-
-        </a-assets>
-
-        <!-- <a-box position="-3a 0.5 -3" rotation="0 45 0" color="#4CC3D9" foo></a-box> -->
+    <a-scene 
+    webxr="optionalFeatures: light-estimation;" background="color: black" vr-mode-ui="enabled: false">
     
-        <a-entity animation="property: rotation; to: 0 360 0; dur: 1000000; easing: linear; loop: true" position="1.567 -6 0" id="mario" scale="2 2 2" gltf-model="#tree"></a-entity>
-        <a-entity gltf-model="#camiseta" scale="5 5 5" position="0 0.47 0" rotation='0 -43 0'></a-entity>
+        <a-entity id="rig" movement-controls kinematic-body position="2.192 0 19.956">
+          <a-entity id="camera" camera position="0 2 0" look-controls  cursor="rayOrigin: mouse"></a-entity>
+        </a-entity>
+        <a-assets>
+            <a-asset-item id="cartaastral" src="./assets/cartaastralguadalupana.gltf"></a-asset-item>
+            <a-asset-item id="camiseta01" src="./assets/esqueletoprintfrontal.gltf"></a-asset-item>
+            <a-asset-item id="camiseta02" src="./assets/esqueletoprinttrasera.gltf"></a-asset-item>
+        </a-assets>  
 
+        <a-entity animation="property: rotation; to: 0 360 0; dur: 1000000; easing: linear; loop: true" position="0 -10 0" scale="1 1 1" gltf-model="#cartaastral"></a-entity>      
+        <a-entity animation="property: rotation; to: 0 -360 0; dur: 100000; easing: linear; loop: true" position="0 -3.5 0" scale="7 7 7" gltf-model="#camiseta01"></a-entity>
+        <a-entity animation="property: rotation; to: 0 -360 0; dur: 100000; easing: linear; loop: true" position="0 -3.5 0" scale="7 7 7" gltf-model="#camiseta02"></a-entity>
         <a-light type="ambient" intensity="1.2s" ></a-light>
-        <a-light type="point"   position="-7.504 5.560 -5.006"    light="intensity:  3.61;  color:  #1fcee5;  groundColor:  #0ee174;  decay:  1.93;  penumbra:  1;  shadowBias:  0.49;  shadowCameraFar:  501.21;  shadowCameraBottom:  -4.79"        ></a-light>
-        <a-light type="point"     position="0 3.624 3.708"    light="intensity:  3.61;  color:  #1fcee5;  groundColor:  #0ee174;  decay:  1.93;  penumbra:  1;  shadowBias:  0.49;  shadowCameraFar:  501.21;  shadowCameraBottom:  -4.79"        ></a-light>
-
-        <!-- <a-image rotation="-15.202 0 0"  scale="7.676 1.781 1.857" position="1.419 0.43712 1.680" material="transparent:true; opacity:1;alpha-test:0.5" src="#my-image" ></a-image> -->
-
-
-<a-sky  src="#sky" animation="property: rotation; to: 0 360 0; dur: 60000; easing: linear; loop: true"  ></a-sky>
-<!-- <a-plane animation="property: rotation; to: -90 360 0; dur: 60000; easing: linear; loop: true" static-body  src="#floor"  width="30" height="30" scale="2.110 1.180 1.000" rotation="-90 0 0" position="0 -2 -2.5"  ></a-plane> -->
-
-
-
+        <a-light type="point"  position="-7.504 5.560 -5.006"    light="intensity:  3.61;  color:  #0016ae;  groundColor:  #0ee174;  decay:  1.93;  penumbra:  1;  shadowBias:  0.49;  shadowCameraFar:  501.21;  shadowCameraBottom:  -4.79"        ></a-light>
+        <a-light type="point" position="0 3.624 3.708"    light="intensity:  3.61;  color:  #b4aad1;  groundColor:  #aa0064;  decay:  1.93;  penumbra:  1;  shadowBias:  0.49;  shadowCameraFar:  501.21;  shadowCameraBottom:  -4.79"        ></a-light>
+        
+        <!--
+            <a-sky  src="#sky" animation="property: rotation; to: 0 360 0; dur: 60; easing: linear; loop: true"  ></a-sky> 
+        
+            loading-screen="dotsColor: red; backgroundColor: black" vr-mode-ui="enabled: false">
+        -->
     </a-scene>
 
 </body>
