@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html lang="en">
 
 <!-- 
 Un proyecto de Juan Echeverry [@pasadooscuro] en colaboración con Sebastián Mira [@argammasa]
@@ -40,56 +40,34 @@ ____¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶___¶¶¶¶¶¶¶¶¶¶
 _____¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶____¶¶¶¶¶¶¶¶¶¶
 ______¶¶¶¶¶¶¶¶¶¶¶¶¶____¶¶¶¶¶¶¶¶¶¶
 _______¶¶¶¶¶¶¶¶¶¶¶______¶¶¶¶¶¶¶¶
-                             
-                             
+                                               
 -->	
-	
-
-
-
-
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="📿 @pasadooscuro + @argammasa 📿 2021 📿 ">
+    <meta name="description" content="📿 2021 📿">
     <title> 𝔅𝔄𝔍𝔒 𝔗𝔘 𝔐𝔄𝔑𝔗𝔒 𝔐𝔈 𝔒ℭ𝔘𝔏𝔗𝔒 </title>
     <link rel="shortcut icon" href="https://d2w9rnfcy7mm78.cloudfront.net/13489344/original_538361e9e599f2ea66fbd4ce75996b8d.png?1633739798?bc=0">
-
-</head>
-
-<body>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+</head>
 
-        
- 
-    <a-scene 
-    webxr="optionalFeatures: light-estimation;" background="color: black" vr-mode-ui="enabled: false">
-    
-        <a-entity id="rig" movement-controls kinematic-body position="2.192 0 19.956">
-          <a-entity id="camera" camera position="0 2 0" look-controls  cursor="rayOrigin: mouse"></a-entity>
-        </a-entity>
-        <a-assets>
-            <a-asset-item id="cartaastral" src="./assets/cartaastralguadalupana.gltf"></a-asset-item>
-            <a-asset-item id="camiseta01" src="./assets/esqueletoprintfrontal.gltf"></a-asset-item>
-            <a-asset-item id="camiseta02" src="./assets/esqueletoprinttrasera.gltf"></a-asset-item>
-        </a-assets>  
 
+<body>
+    <a-scene background="color: black" vr-mode-ui="enabled: false" loading-screen="dotsColor: white; backgroundColor: black">
+        <a-entity id="rig" movement-controls kinematic-body position="0 0 30">
+        <a-entity id="camera" camera position="0 2 0" look-controls  cursor="rayOrigin: mouse"></a-entity></a-entity>
+            <a-assets>
+                <a-asset-item id="cartaastral" src="./assets/cartaastralguadalupana.gltf" preload="auto"></a-asset-item>
+                <a-asset-item id="camiseta" src="./assets/esqueletodobleprint.gltf" preload="auto"></a-asset-item>
+            </a-assets>          
         <a-entity animation="property: rotation; to: 0 360 0; dur: 1000000; easing: linear; loop: true" position="0 -10 0" scale="1 1 1" gltf-model="#cartaastral"></a-entity>      
-        <a-entity animation="property: rotation; to: 0 -360 0; dur: 100000; easing: linear; loop: true" position="0 -3.5 0" scale="7 7 7" gltf-model="#camiseta01"></a-entity>
-        <a-entity animation="property: rotation; to: 0 -360 0; dur: 100000; easing: linear; loop: true" position="0 -3.5 0" scale="7 7 7" gltf-model="#camiseta02"></a-entity>
-        <a-light type="ambient" intensity="1.2s" ></a-light>
-        <a-light type="point"  position="-7.504 5.560 -5.006"    light="intensity:  3.61;  color:  #0016ae;  groundColor:  #0ee174;  decay:  1.93;  penumbra:  1;  shadowBias:  0.49;  shadowCameraFar:  501.21;  shadowCameraBottom:  -4.79"        ></a-light>
-        <a-light type="point" position="0 3.624 3.708"    light="intensity:  3.61;  color:  #b4aad1;  groundColor:  #aa0064;  decay:  1.93;  penumbra:  1;  shadowBias:  0.49;  shadowCameraFar:  501.21;  shadowCameraBottom:  -4.79"        ></a-light>
-        
-        <!--
-            <a-sky  src="#sky" animation="property: rotation; to: 0 360 0; dur: 60; easing: linear; loop: true"  ></a-sky> 
-        
-            loading-screen="dotsColor: red; backgroundColor: black" vr-mode-ui="enabled: false">
-        -->
+        <a-entity animation="property: rotation; to: 0 -360 0; dur: 100000; easing: linear; loop: true" position="0 -3.5 0" scale="7 7 7" gltf-model="#camiseta"></a-entity>
+        <a-light type="ambient"intensity="1.2s"> </a-light>
+        <a-light type="point" position="-7.504 5.560 -5.006" light="intensity:  3.61;  color:  #0016ae;  groundColor:  #0ee174;  decay:  1.93;  penumbra:  1;  shadowBias:  0.49;  shadowCameraFar: 501.21; shadowCameraBottom: -4.79"> </a-light>
+        <a-light type="point" position="0 3.624 3.708" light="intensity:  3.61;  color:  #b4aad1;  groundColor:  #aa0064;  decay:  1.93;  penumbra:  1;  shadowBias:  0.49;  shadowCameraFar:  501.21; shadowCameraBottom: -4.79"></a-light>
     </a-scene>
 
 </body>
